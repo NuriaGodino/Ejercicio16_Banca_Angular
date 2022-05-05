@@ -1,0 +1,32 @@
+<div>
+  <h1>Busqueda entre fechas</h1>
+  <label>Numero Cuenta</label>
+  <input type="number" [(ngModel)] = "numeroCuenta">
+  <br>
+  <br>
+  <label>Desde</label>
+  <input type="date" [(ngModel)] = "f1">
+  <br>
+  <br>
+  <label>Hasta</label>
+  <input type="date" [(ngModel)] = "f2">
+  <br>
+  <br>
+  <button (click)="busquedaEntreFechas()">Enviar</button>
+  <table border="2" *ngIf="movimientos">
+    <thead>
+        <tr>
+            <th>Cantidad</th>
+            <th>Operacion</th>
+            <th>Fecha</th>
+        </tr>
+</thead>
+    <tbody>
+        <tr *ngFor="let m of movimientos">
+            <td>{{m.cantidad}}</td>
+            <td>{{m.operacion}}</td>
+            <td>{{m.fecha}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>
